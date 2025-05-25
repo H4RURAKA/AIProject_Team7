@@ -620,14 +620,14 @@
         },
         {
             "id": 89,
-            "name": "25_elevator2_1f",
+            "name": "elevator2_1f",
             "type": "Elevator",
             "x": 2677.0,
             "y": 1623.0
         },
         {
             "id": 90,
-            "name": "25_elevator1_1f",
+            "name": "elevator1_1f",
             "type": "Elevator",
             "x": 1576.0,
             "y": 315.0
