@@ -592,84 +592,84 @@
         },
         {
             "id": 85,
-            "name": "Node85",
+            "name": "stair2_1f",
             "type": "Stair",
             "x": 1767.0,
             "y": 280.0
         },
         {
             "id": 86,
-            "name": "Node86",
+            "name": "stair3_1f",
             "type": "Stair",
             "x": 2816.0,
             "y": 405.0
         },
         {
             "id": 87,
-            "name": "Node87",
+            "name": "stair4_1f",
             "type": "Stair",
             "x": 2823.0,
             "y": 1611.0
         },
         {
             "id": 88,
-            "name": "25_stair_1f",
+            "name": "stair5_1f",
             "type": "Stair",
             "x": 1969.0,
             "y": 1579.0
         },
         {
             "id": 89,
-            "name": "25_elevator_1f",
+            "name": "25_elevator2_1f",
             "type": "Elevator",
             "x": 2677.0,
             "y": 1623.0
         },
         {
             "id": 90,
-            "name": "Node90",
+            "name": "25_elevator1_1f",
             "type": "Elevator",
             "x": 1576.0,
             "y": 315.0
         },
         {
             "id": 91,
-            "name": "Node91",
+            "name": "door1",
             "type": "Door",
             "x": 1297.0,
             "y": 743.0
         },
         {
             "id": 92,
-            "name": "Node92",
+            "name": "door2",
             "type": "Door",
             "x": 1765.0,
             "y": 423.0
         },
         {
             "id": 93,
-            "name": "Node93",
+            "name": "door3",
             "type": "Door",
             "x": 2692.0,
             "y": 295.0
         },
         {
             "id": 94,
-            "name": "26_door",
+            "name": "door4",
             "type": "Door",
             "x": 2793.0,
             "y": 1343.0
         },
         {
             "id": 95,
-            "name": "25_door",
+            "name": "door5",
             "type": "Door",
             "x": 1750.0,
             "y": 1603.0
         },
         {
             "id": 96,
-            "name": "Node96",
+            "name": "stair1_1f",
             "type": "Stair",
             "x": 1436.0,
             "y": 746.0
