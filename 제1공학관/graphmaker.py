@@ -6,20 +6,34 @@ from PyQt5.QtWidgets import (
     QApplication, QMainWindow, QFileDialog, QGraphicsView, QGraphicsScene,
     QGraphicsEllipseItem, QGraphicsLineItem, QGraphicsPixmapItem, QGraphicsTextItem,
     QGraphicsItem, QAction, QToolBar, QDockWidget, QWidget, QFormLayout, QLineEdit,
-    QComboBox, QPushButton, QInputDialog
+    QComboBox, QPushButton, QInputDialog, QStatusBar
 )
-from PyQt5.QtGui import QBrush, QColor, QPen, QPixmap
+from PyQt5.QtGui import QBrush, QColor, QPen, QPixmap, QPainter
 from PyQt5.QtCore import Qt, QPointF, QRectF
 
-# Default node types and colors, including door/exit type
-default_types = {
-    'Room': '#FF9999',
-    'Corridor': '#99FF99',
-    'Restroom': '#9999FF',
-    'Stair': '#FFFF99',
-    'Elevator': '#FF99FF',
-    'Door': '#FFCC00'  # 출입문 요소
-}
+# Custom view class to support Ctrl + wheel zoom
+class ZoomableGraphicsView(QGraphicsView):
+    def __init__(self, *args):
+        super().__init__(*args)
+        self.setRenderHint(QPainter.Antialiasing)
+        self.setTransformationAnchor(QGraphicsView.AnchorUnderMouse)
+        self.setResizeAnchor(QGraphicsView.AnchorUnderMouse)
+        self.scale_factor = 1.0
+        self.status_bar = None
+
+    def wheelEvent(self, event):
+        if event.modifiers() == Qt.ControlModifier:
+            factor = 1.15 if event.angleDelta().y() > 0 else 1 / 1.15
+            self.scale(factor, factor)
+            self.scale_factor *= factor
+            # 안전하게 statusBar 접근
+            if hasattr(self.parent(), 'statusBar'):
+                bar = self.parent().statusBar()
+                if bar:
+                    bar.showMessage(f"Zoom: {self.scale_factor * 100:.1f}%")
+        else:
+            super().wheelEvent(event)
+
 
 class EdgeItem(QGraphicsLineItem):
     def __init__(self, src, dst, scale_factor, *args, **kwargs):
@@ -42,7 +56,6 @@ class EdgeItem(QGraphicsLineItem):
         self.update_position()
 
     def toggle_selection(self):
-        # Toggle selected state and color
         self.selected = not self.selected
         pen = self.pen()
         pen.setColor(QColor('#FF0000') if self.selected else QColor('#555555'))
@@ -82,7 +95,14 @@ class GraphEditor(QMainWindow):
         super().__init__()
         self.setWindowTitle('Graph Editor')
         self.scale_factor = 1.0
-        self.node_types = dict(default_types)
+        self.node_types = {
+            'Room': '#FF9999',
+            'Corridor': '#99FF99',
+            'Restroom': '#9999FF',
+            'Stair': '#FFFF99',
+            'Elevator': '#FF99FF',
+            'Door': '#FFCC00'
+        }
         self.nodes = {}
         self.edges = []
         self.next_id = 1
@@ -93,14 +113,14 @@ class GraphEditor(QMainWindow):
 
     def _init_ui(self):
         self.scene = QGraphicsScene(self)
-        self.view = QGraphicsView(self.scene)
+        self.view = ZoomableGraphicsView(self.scene)
+        self.view.status_bar = self.statusBar()  # 연결
         self.setCentralWidget(self.view)
 
         self.bg_item = None
 
         tb = QToolBar('Tools', self)
         self.addToolBar(tb)
-        # File actions
         for action_name in ['New', 'Load', 'Save']:
             act = QAction(action_name, self)
             if action_name == 'New':
@@ -111,7 +131,6 @@ class GraphEditor(QMainWindow):
                 act.triggered.connect(self.save_json)
             tb.addAction(act)
         tb.addSeparator()
-        # Mode actions
         self.mode_actions = {}
         for name in ['Node Add', 'Node Edit', 'Node Delete', 'Edge Add', 'Edge Delete', 'Calibrate Scale']:
             act = QAction(name, self)
@@ -119,12 +138,11 @@ class GraphEditor(QMainWindow):
             act.triggered.connect(lambda checked, n=name: self.set_mode(n))
             tb.addAction(act)
             self.mode_actions[name] = act
-        # Apply scale button
+
         self.apply_scale_btn = QAction('Apply Scale', self)
         self.apply_scale_btn.triggered.connect(self.apply_scale)
         tb.addAction(self.apply_scale_btn)
 
-        # Properties dock
         self.prop_dock = QDockWidget('Properties', self)
         props = QWidget()
         layout = QFormLayout(props)
@@ -143,24 +161,21 @@ class GraphEditor(QMainWindow):
         self.addDockWidget(Qt.RightDockWidgetArea, self.prop_dock)
         self.prop_dock.hide()
 
-        # Mouse event override
         self.scene.mousePressEvent = self.on_mouse_press
+        self.setStatusBar(QStatusBar(self))
+        self.statusBar().showMessage("Zoom: 100.0%")
 
     def set_mode(self, mode_name):
-        # Toggle mode buttons
         for name, act in self.mode_actions.items():
             act.setChecked(name == mode_name)
         self.mode = mode_name
-        # Show/hide properties
         self.prop_dock.setVisible(mode_name in ['Node Add', 'Node Edit'])
-        # Preload properties when editing
         if mode_name == 'Node Edit':
             items = self.scene.selectedItems()
             if items and isinstance(items[0], NodeItem):
                 node = items[0]
                 self.prop_name.setText(node.name)
                 self.prop_type.setCurrentText(node.ntype)
-        # Make nodes movable only in edit mode
         for node in self.nodes.values():
             node.setFlag(QGraphicsEllipseItem.ItemIsMovable, mode_name == 'Node Edit')
 
@@ -168,15 +183,14 @@ class GraphEditor(QMainWindow):
         path, _ = QFileDialog.getOpenFileName(self, 'Select Background Image', '', 'Images (*.png *.jpg *.bmp)')
         if not path:
             return
-        # Clear scene
         self.scene.clear()
         self.nodes.clear()
         self.edges.clear()
         self.next_id = 1
-        # Add background
         pix = QPixmap(path)
         self.bg_item = QGraphicsPixmapItem(pix)
         self.bg_item.filePath = path
+        self.bg_item.setZValue(-1)
         self.scene.addItem(self.bg_item)
 
     def load_json(self):
@@ -185,28 +199,24 @@ class GraphEditor(QMainWindow):
             return
         with open(path, 'r') as f:
             data = json.load(f)
-        # Load scale
         self.scale_factor = data.get('scale', 1.0)
-        # Load background
         bg = data.get('background', '')
+        self.scene.clear()
         if os.path.exists(bg):
             pix = QPixmap(bg)
-            self.scene.clear()
             self.bg_item = QGraphicsPixmapItem(pix)
             self.bg_item.filePath = bg
+            self.bg_item.setZValue(-1)
             self.scene.addItem(self.bg_item)
-        # Clear existing nodes/edges
         self.nodes.clear()
         self.edges.clear()
         self.next_id = 1
-        # Create nodes
         for nd in data.get('nodes', []):
             node = NodeItem(nd['id'], nd['name'], nd['type'], self.node_types.get(nd['type'], '#CCCCCC'))
             node.setPos(nd['x'], nd['y'])
             self.scene.addItem(node)
             self.nodes[nd['id']] = node
             self.next_id = max(self.next_id, nd['id'] + 1)
-        # Create edges
         for ed in data.get('edges', []):
             src = self.nodes.get(ed['source'])
             dst = self.nodes.get(ed['target'])
@@ -269,7 +279,6 @@ class GraphEditor(QMainWindow):
     def on_mouse_press(self, event):
         pos = event.scenePos()
         if self.mode == 'Node Edit':
-            # Default QGraphics handling (move/select)
             QGraphicsScene.mousePressEvent(self.scene, event)
             return
         if self.mode == 'Node Add':
@@ -285,7 +294,6 @@ class GraphEditor(QMainWindow):
         if self.mode == 'Node Delete':
             for it in self.scene.items(QRectF(pos.x()-5, pos.y()-5, 10, 10)):
                 if isinstance(it, NodeItem):
-                    # remove connected edges
                     for e in list(it.edges):
                         self.scene.removeItem(e)
                         self.edges.remove(e)
@@ -318,32 +326,25 @@ class GraphEditor(QMainWindow):
                     break
             return
         if self.mode == 'Calibrate Scale':
-            # Toggle selection on edges, no prompt
             for it in self.scene.items(QRectF(pos.x()-5, pos.y()-5, 10, 10)):
                 if isinstance(it, EdgeItem):
                     it.toggle_selection()
                     break
             return
-        # Default fallback
         QGraphicsScene.mousePressEvent(self.scene, event)
 
     def apply_scale(self):
-        # Only apply when in calibrate mode
         if self.mode != 'Calibrate Scale':
             return
-        # Gather selected edges
         selected_edges = [e for e in self.edges if e.selected]
         if not selected_edges:
             return
-        # Compute total pixel length
         pixel_sum = sum(math.hypot(e.dst.pos().x()-e.src.pos().x(), e.dst.pos().y()-e.src.pos().y()) for e in selected_edges)
         meters, ok = QInputDialog.getDouble(self, 'Scale Calibration', f'Selected total pixel length: {pixel_sum:.2f}. Enter real-world meters:')
         if ok and pixel_sum > 0:
             self.scale_factor = meters / pixel_sum
-            # Update all edges
             for e in self.edges:
                 e.set_scale(self.scale_factor)
-        # Clear selection highlights
         for e in selected_edges:
             e.toggle_selection()
 
