@@ -1,0 +1,819 @@
+{
+    "background": "C:/Users/ldsbo/OneDrive/\ubc14\ud0d5 \ud654\uba74/AIProject_Team7/\uc0b0\ud559\ud611\ub825\uad00/2.jpg",
+    "scale": 0.04797424742448244,
+    "nodes": [
+        {
+            "id": 1,
+            "name": "85201",
+            "type": "Room",
+            "x": 1604.0,
+            "y": 286.0
+        },
+        {
+            "id": 2,
+            "name": "85202",
+            "type": "Room",
+            "x": 1606.0,
+            "y": 401.0
+        },
+        {
+            "id": 3,
+            "name": "85205",
+            "type": "Room",
+            "x": 1735.0,
+            "y": 268.0
+        },
+        {
+            "id": 4,
+            "name": "85206",
+            "type": "Room",
+            "x": 1732.0,
+            "y": 399.0
+        },
+        {
+            "id": 5,
+            "name": "85207",
+            "type": "Room",
+            "x": 1859.0,
+            "y": 276.0
+        },
+        {
+            "id": 6,
+            "name": "85208",
+            "type": "Room",
+            "x": 1861.0,
+            "y": 399.0
+        },
+        {
+            "id": 7,
+            "name": "85211",
+            "type": "Room",
+            "x": 1991.0,
+            "y": 274.0
+        },
+        {
+            "id": 8,
+            "name": "85212",
+            "type": "Room",
+            "x": 1991.0,
+            "y": 402.0
+        },
+        {
+            "id": 9,
+            "name": "85215",
+            "type": "Room",
+            "x": 2113.0,
+            "y": 279.0
+        },
+        {
+            "id": 10,
+            "name": "85216",
+            "type": "Room",
+            "x": 2118.0,
+            "y": 399.0
+        },
+        {
+            "id": 11,
+            "name": "85220",
+            "type": "Room",
+            "x": 2260.0,
+            "y": 389.0
+        },
+        {
+            "id": 12,
+            "name": "85222",
+            "type": "Room",
+            "x": 2409.0,
+            "y": 389.0
+        },
+        {
+            "id": 13,
+            "name": "85224",
+            "type": "Room",
+            "x": 2409.0,
+            "y": 470.0
+        },
+        {
+            "id": 14,
+            "name": "85245",
+            "type": "Room",
+            "x": 2817.0,
+            "y": 826.0
+        },
+        {
+            "id": 15,
+            "name": "85256",
+            "type": "Room",
+            "x": 2701.0,
+            "y": 1028.0
+        },
+        {
+            "id": 16,
+            "name": "85261",
+            "type": "Room",
+            "x": 2821.0,
+            "y": 1270.0
+        },
+        {
+            "id": 17,
+            "name": "85268",
+            "type": "Room",
+            "x": 2695.0,
+            "y": 1351.0
+        },
+        {
+            "id": 18,
+            "name": "85273",
+            "type": "Room",
+            "x": 2820.0,
+            "y": 1649.0
+        },
+        {
+            "id": 19,
+            "name": "85277",
+            "type": "Room",
+            "x": 2817.0,
+            "y": 1745.0
+        },
+        {
+            "id": 20,
+            "name": "85283",
+            "type": "Room",
+            "x": 2763.0,
+            "y": 1798.0
+        },
+        {
+            "id": 21,
+            "name": "85285",
+            "type": "Room",
+            "x": 2696.0,
+            "y": 1795.0
+        },
+        {
+            "id": 22,
+            "name": "85287",
+            "type": "Room",
+            "x": 2618.0,
+            "y": 1798.0
+        },
+        {
+            "id": 23,
+            "name": "85289",
+            "type": "Room",
+            "x": 2547.0,
+            "y": 1799.0
+        },
+        {
+            "id": 24,
+            "name": "85291",
+            "type": "Room",
+            "x": 2483.0,
+            "y": 1798.0
+        },
+        {
+            "id": 25,
+            "name": "85293",
+            "type": "Room",
+            "x": 2408.0,
+            "y": 1802.0
+        },
+        {
+            "id": 26,
+            "name": "85295",
+            "type": "Room",
+            "x": 2338.0,
+            "y": 1804.0
+        },
+        {
+            "id": 27,
+            "name": "85297",
+            "type": "Room",
+            "x": 2278.0,
+            "y": 1803.0
+        },
+        {
+            "id": 28,
+            "name": "85296",
+            "type": "Room",
+            "x": 2343.0,
+            "y": 1701.0
+        },
+        {
+            "id": 29,
+            "name": "85292",
+            "type": "Room",
+            "x": 2484.0,
+            "y": 1701.0
+        },
+        {
+            "id": 30,
+            "name": "Node30",
+            "type": "Corridor",
+            "x": 1607.0,
+            "y": 341.0
+        },
+        {
+            "id": 31,
+            "name": "Node31",
+            "type": "Corridor",
+            "x": 1735.0,
+            "y": 340.0
+        },
+        {
+            "id": 32,
+            "name": "Node32",
+            "type": "Corridor",
+            "x": 1863.0,
+            "y": 338.0
+        },
+        {
+            "id": 33,
+            "name": "Node33",
+            "type": "Corridor",
+            "x": 1985.0,
+            "y": 340.0
+        },
+        {
+            "id": 34,
+            "name": "Node34",
+            "type": "Corridor",
+            "x": 2111.0,
+            "y": 340.0
+        },
+        {
+            "id": 35,
+            "name": "Node35",
+            "type": "Corridor",
+            "x": 2262.0,
+            "y": 341.0
+        },
+        {
+            "id": 36,
+            "name": "Node36",
+            "type": "Corridor",
+            "x": 2410.0,
+            "y": 340.0
+        },
+        {
+            "id": 37,
+            "name": "Node37",
+            "type": "Corridor",
+            "x": 2566.0,
+            "y": 329.0
+        },
+        {
+            "id": 38,
+            "name": "Node38",
+            "type": "Corridor",
+            "x": 2568.0,
+            "y": 508.0
+        },
+        {
+            "id": 39,
+            "name": "Node39",
+            "type": "Corridor",
+            "x": 2652.0,
+            "y": 511.0
+        },
+        {
+            "id": 40,
+            "name": "Node40",
+            "type": "Corridor",
+            "x": 2755.0,
+            "y": 509.0
+        },
+        {
+            "id": 41,
+            "name": "Node41",
+            "type": "Corridor",
+            "x": 2755.0,
+            "y": 640.0
+        },
+        {
+            "id": 42,
+            "name": "Node42",
+            "type": "Corridor",
+            "x": 2759.0,
+            "y": 748.0
+        },
+        {
+            "id": 43,
+            "name": "Node43",
+            "type": "Corridor",
+            "x": 2759.0,
+            "y": 827.0
+        },
+        {
+            "id": 44,
+            "name": "Node44",
+            "type": "Corridor",
+            "x": 2758.0,
+            "y": 1028.0
+        },
+        {
+            "id": 45,
+            "name": "Node45",
+            "type": "Corridor",
+            "x": 2759.0,
+            "y": 1268.0
+        },
+        {
+            "id": 46,
+            "name": "Node46",
+            "type": "Corridor",
+            "x": 2762.0,
+            "y": 1351.0
+        },
+        {
+            "id": 47,
+            "name": "Node47",
+            "type": "Corridor",
+            "x": 2761.0,
+            "y": 1588.0
+        },
+        {
+            "id": 48,
+            "name": "Node48",
+            "type": "Corridor",
+            "x": 2763.0,
+            "y": 1646.0
+        },
+        {
+            "id": 49,
+            "name": "Node49",
+            "type": "Corridor",
+            "x": 2765.0,
+            "y": 1745.0
+        },
+        {
+            "id": 50,
+            "name": "Node50",
+            "type": "Corridor",
+            "x": 2693.0,
+            "y": 1748.0
+        },
+        {
+            "id": 51,
+            "name": "Node51",
+            "type": "Corridor",
+            "x": 2615.0,
+            "y": 1745.0
+        },
+        {
+            "id": 52,
+            "name": "Node52",
+            "type": "Corridor",
+            "x": 2545.0,
+            "y": 1747.0
+        },
+        {
+            "id": 53,
+            "name": "Node53",
+            "type": "Corridor",
+            "x": 2483.0,
+            "y": 1746.0
+        },
+        {
+            "id": 54,
+            "name": "Node54",
+            "type": "Corridor",
+            "x": 2416.0,
+            "y": 1745.0
+        },
+        {
+            "id": 55,
+            "name": "Node55",
+            "type": "Corridor",
+            "x": 2341.0,
+            "y": 1744.0
+        },
+        {
+            "id": 56,
+            "name": "Node56",
+            "type": "Corridor",
+            "x": 2271.0,
+            "y": 1744.0
+        },
+        {
+            "id": 57,
+            "name": "Node57",
+            "type": "Restroom",
+            "x": 2263.0,
+            "y": 281.0
+        },
+        {
+            "id": 58,
+            "name": "Node58",
+            "type": "Restroom",
+            "x": 2690.0,
+            "y": 748.0
+        },
+        {
+            "id": 59,
+            "name": "Node59",
+            "type": "Restroom",
+            "x": 2614.0,
+            "y": 1698.0
+        },
+        {
+            "id": 60,
+            "name": "stair1_2f",
+            "type": "Stair",
+            "x": 1509.0,
+            "y": 341.0
+        },
+        {
+            "id": 61,
+            "name": "stair2_2f",
+            "type": "Stair",
+            "x": 2413.0,
+            "y": 182.0
+        },
+        {
+            "id": 62,
+            "name": "stair3_2f",
+            "type": "Stair",
+            "x": 2694.0,
+            "y": 639.0
+        },
+        {
+            "id": 63,
+            "name": "stair4_2f",
+            "type": "Stair",
+            "x": 2694.0,
+            "y": 1588.0
+        },
+        {
+            "id": 64,
+            "name": "Node64",
+            "type": "Elevator",
+            "x": 2686.0,
+            "y": 1649.0
+        },
+        {
+            "id": 65,
+            "name": "Node65",
+            "type": "Elevator",
+            "x": 2655.0,
+            "y": 560.0
+        },
+        {
+            "id": 66,
+            "name": "Node66",
+            "type": "Door",
+            "x": 2609.0,
+            "y": 230.0
+        },
+        {
+            "id": 67,
+            "name": "road4",
+            "type": "Outside",
+            "x": 2674.0,
+            "y": 104.0
+        },
+        {
+            "id": 68,
+            "name": "stair0_2f",
+            "type": "Stair",
+            "x": 2564.0,
+            "y": 636.0
+        }
+    ],
+    "edges": [
+        {
+            "source": 60,
+            "target": 30,
+            "weight": 4.701476247599279
+        },
+        {
+            "source": 1,
+            "target": 30,
+            "weight": 2.6425058588352317
+        },
+        {
+            "source": 2,
+            "target": 30,
+            "weight": 2.8788546031051307
+        },
+        {
+            "source": 30,
+            "target": 31,
+            "weight": 6.140891066878353
+        },
+        {
+            "source": 3,
+            "target": 31,
+            "weight": 3.4541458145627355
+        },
+        {
+            "source": 4,
+            "target": 31,
+            "weight": 2.8341372887793663
+        },
+        {
+            "source": 31,
+            "target": 32,
+            "weight": 6.141453222203536
+        },
+        {
+            "source": 5,
+            "target": 32,
+            "weight": 2.9805871377212703
+        },
+        {
+            "source": 6,
+            "target": 32,
+            "weight": 2.928001596549571
+        },
+        {
+            "source": 32,
+            "target": 33,
+            "weight": 5.853644596026992
+        },
+        {
+            "source": 33,
+            "target": 7,
+            "weight": 3.1793572939876484
+        },
+        {
+            "source": 33,
+            "target": 8,
+            "weight": 2.9882988896474836
+        },
+        {
+            "source": 33,
+            "target": 34,
+            "weight": 6.044755175484787
+        },
+        {
+            "source": 34,
+            "target": 9,
+            "weight": 2.928001596549571
+        },
+        {
+            "source": 34,
+            "target": 10,
+            "weight": 2.850332490831109
+        },
+        {
+            "source": 34,
+            "target": 35,
+            "weight": 7.244270214479052
+        },
+        {
+            "source": 35,
+            "target": 57,
+            "weight": 2.8788546031051307
+        },
+        {
+            "source": 35,
+            "target": 11,
+            "weight": 2.3047619365136436
+        },
+        {
+            "source": 35,
+            "target": 36,
+            "weight": 7.052377547223447
+        },
+        {
+            "source": 12,
+            "target": 36,
+            "weight": 2.3526954414774623
+        },
+        {
+            "source": 36,
+            "target": 61,
+            "weight": 7.582359779799266
+        },
+        {
+            "source": 12,
+            "target": 13,
+            "weight": 3.886210167429717
+        },
+        {
+            "source": 36,
+            "target": 37,
+            "weight": 7.550421105009247
+        },
+        {
+            "source": 37,
+            "target": 66,
+            "weight": 5.178108346275174
+        },
+        {
+            "source": 66,
+            "target": 67,
+            "weight": 6.8016926341109905
+        },
+        {
+            "source": 37,
+            "target": 38,
+            "weight": 8.58792629736494
+        },
+        {
+            "source": 38,
+            "target": 68,
+            "weight": 6.1437013291260785
+        },
+        {
+            "source": 38,
+            "target": 39,
+            "weight": 4.032406013617016
+        },
+        {
+            "source": 39,
+            "target": 65,
+            "weight": 2.3551398010369913
+        },
+        {
+            "source": 39,
+            "target": 40,
+            "weight": 4.9422789357167165
+        },
+        {
+            "source": 40,
+            "target": 41,
+            "weight": 6.284626412607199
+        },
+        {
+            "source": 41,
+            "target": 62,
+            "weight": 2.926822298013496
+        },
+        {
+            "source": 42,
+            "target": 41,
+            "weight": 5.18477115196447
+        },
+        {
+            "source": 58,
+            "target": 42,
+            "weight": 3.3102230722892885
+        },
+        {
+            "source": 42,
+            "target": 43,
+            "weight": 3.790269168849564
+        },
+        {
+            "source": 43,
+            "target": 14,
+            "weight": 2.8308871302689007
+        },
+        {
+            "source": 43,
+            "target": 44,
+            "weight": 9.643301076201878
+        },
+        {
+            "source": 15,
+            "target": 44,
+            "weight": 2.686557855771017
+        },
+        {
+            "source": 44,
+            "target": 45,
+            "weight": 11.514219160330512
+        },
+        {
+            "source": 45,
+            "target": 16,
+            "weight": 2.975950494305665
+        },
+        {
+            "source": 45,
+            "target": 46,
+            "weight": 3.984462700690243
+        },
+        {
+            "source": 17,
+            "target": 46,
+            "weight": 3.2142745774403236
+        },
+        {
+            "source": 46,
+            "target": 47,
+            "weight": 11.369997850644321
+        },
+        {
+            "source": 47,
+            "target": 63,
+            "weight": 3.2142745774403236
+        },
+        {
+            "source": 47,
+            "target": 48,
+            "weight": 2.784160143544963
+        },
+        {
+            "source": 48,
+            "target": 64,
+            "weight": 3.696819678302438
+        },
+        {
+            "source": 48,
+            "target": 18,
+            "weight": 2.738316924526872
+        },
+        {
+            "source": 48,
+            "target": 49,
+            "weight": 4.750419572874089
+        },
+        {
+            "source": 49,
+            "target": 19,
+            "weight": 2.4946608660730867
+        },
+        {
+            "source": 49,
+            "target": 20,
+            "weight": 2.544444818433793
+        },
+        {
+            "source": 49,
+            "target": 50,
+            "weight": 3.4571429047704654
+        },
+        {
+            "source": 50,
+            "target": 21,
+            "weight": 2.259378238933674
+        },
+        {
+            "source": 50,
+            "target": 51,
+            "weight": 3.744758021335382
+        },
+        {
+            "source": 51,
+            "target": 22,
+            "weight": 2.546705141184253
+        },
+        {
+            "source": 51,
+            "target": 52,
+            "weight": 3.3595677328782254
+        },
+        {
+            "source": 52,
+            "target": 23,
+            "weight": 2.496505347556922
+        },
+        {
+            "source": 52,
+            "target": 53,
+            "weight": 2.974790204251435
+        },
+        {
+            "source": 53,
+            "target": 24,
+            "weight": 2.4946608660730867
+        },
+        {
+            "source": 53,
+            "target": 54,
+            "weight": 3.214632574275809
+        },
+        {
+            "source": 54,
+            "target": 25,
+            "weight": 2.761333670896603
+        },
+        {
+            "source": 54,
+            "target": 55,
+            "weight": 3.5983883709390176
+        },
+        {
+            "source": 55,
+            "target": 26,
+            "weight": 2.882050668039541
+        },
+        {
+            "source": 55,
+            "target": 56,
+            "weight": 3.3581973197137707
+        },
+        {
+            "source": 56,
+            "target": 27,
+            "weight": 2.850332490831109
+        },
+        {
+            "source": 55,
+            "target": 28,
+            "weight": 2.0651227941086066
+        },
+        {
+            "source": 53,
+            "target": 29,
+            "weight": 2.159374115503264
+        },
+        {
+            "source": 51,
+            "target": 59,
+            "weight": 2.2552999355383903
+        }
+    ]
+}
