@@ -1,1 +1,0 @@
-For Presentation. PPT & Paper
